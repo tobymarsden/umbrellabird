@@ -1,0 +1,23 @@
+<% unless User.following_or_ignoring?(user.id, current_account_uid) %>
+<div class="row user-row">
+	<div class="col-sm-8 col-sm-offset-1">
+		<div class="row">
+			<div class="user clearfix">
+				<div class="col-sm-4 profile-image">
+					<%= link_to image_tag(user.profile_image_uri(:original)), user.uri.to_s, target: "_blank" %>
+				</div>
+				<div class="col-sm-8 profile">
+					<h2><%= user.name %> <span class="screen_name">@<%= user.screen_name %></h2>
+					<p><%= user.description %></p>
+					<strong> Followers: <%= user.followers_count %> | Following: <%= user.friends_count %> | Tweets: <%= user.statuses_count %> | Location: <%= user.location %></strong>
+					<div class="tweet"><%= user.status.try(:text) %></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-3 actions">
+		<%= button_to "Follow", follow_user_path(user.id), remote: true, class: "btn btn-success btn-lg follow-btn" %>
+		<%= button_to "Ignore", ignore_user_path(user.id), remote: true, class: "btn btn-warning btn-lg ignore-btn" %>
+	</div>
+</div>
+<% end %>
