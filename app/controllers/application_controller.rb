@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  helper_method :current_account_image
+
   def login_if_no_account_uid
     redirect_to '/auth/twitter' unless current_account_uid
   end
@@ -13,6 +15,10 @@ class ApplicationController < ActionController::Base
 
   def current_account_uid
     session[:account_uid]
+  end
+
+  def current_account_image
+    session[:account_image]
   end
 
 end
