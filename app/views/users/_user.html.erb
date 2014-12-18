@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="user clearfix">
 				<div class="col-sm-4 profile-image">
-					<%= link_to image_tag(user.profile_image_uri(:original)), user.uri.to_s, target: "_blank" %>
+					<%= link_to image_tag(user.profile_image_uri_https(:original)), user.uri.to_s, target: "_blank" %>
 				</div>
 				<div class="col-sm-8 profile">
 					<h2><%= user.name %> <span class="screen_name">@<%= user.screen_name %></h2>

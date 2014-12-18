@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   def create
     raise "Twitter UID not provided" unless auth_hash[:uid]
     session[:account_uid] = auth_hash[:uid]
-    session[:account_image] = auth_hash[:info][:image]
+    session[:account_image] = auth_hash[:extra][:raw_info][:profile_image_url_https]
     session[:access_token] = auth_hash[:credentials][:token]
     session[:access_token_secret] = auth_hash[:credentials][:secret]
     redirect_to root_path
