@@ -24,4 +24,8 @@ class TwitterBot
     twitter.follow!(twitter_user_id)
   end
 
+  def user(username)
+    twitter.user(username) rescue nil
+  end
+
 end
