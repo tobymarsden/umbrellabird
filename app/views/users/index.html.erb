@@ -25,7 +25,7 @@
   <% end %>
 
   <div class="user-list">
-    <%= render partial: "user", collection: @users, locals: {actions: [:follow, :ignore]} %>
+    <%= render partial: "user", collection: @users, locals: {actions: [:follow, :follow_ignore]} %>
   </div>
 
   <% if @users.size == 100 %>

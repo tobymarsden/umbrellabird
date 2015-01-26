@@ -29,8 +29,13 @@ class UsersController < ApplicationController
     head status: :ok
   end
 
-  def ignore
-    User.ignore(params[:id], current_account_uid)
+  def follow_ignore
+    User.follow_ignore(params[:id], current_account_uid)
+    head status: :ok
+  end
+
+  def unfollow_ignore
+    User.unfollow_ignore(params[:id], current_account_uid)
     head status: :ok
   end
 

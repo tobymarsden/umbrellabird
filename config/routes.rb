@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     member do
       post :follow
       post :unfollow
-      post :ignore
+      post :follow_ignore
+      post :unfollow_ignore
     end
 
   end

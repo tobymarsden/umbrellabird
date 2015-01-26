@@ -17,7 +17,7 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $('.follow-btn, .ignore-btn, .unfollow-btn').click(function() {
+  $('.ub-follow-btn, .ub-ignore-btn, .ub-unfollow-btn').click(function() {
     $(this).closest('.user-row').hide();
     if($('.user-list').children(':visible').length == 0) {
     	$('.load-more').show();

@@ -11,20 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141218001627) do
+ActiveRecord::Schema.define(version: 20150126211643) do
 
   create_table "users", force: true do |t|
-    t.integer  "user_id",       limit: 8
+    t.integer  "user_id",             limit: 8
     t.datetime "followed_at"
     t.datetime "unfollowed_at"
-    t.datetime "ignored_at"
+    t.datetime "follow_ignored_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "account_uid",   limit: 8
+    t.integer  "account_uid",         limit: 8
+    t.datetime "unfollow_ignored_at"
   end
 
   add_index "users", ["account_uid"], name: "index_users_on_account_uid", using: :btree
+  add_index "users", ["follow_ignored_at"], name: "index_users_on_follow_ignored_at", using: :btree
   add_index "users", ["followed_at"], name: "index_users_on_followed_at", using: :btree
-  add_index "users", ["ignored_at"], name: "index_users_on_ignored_at", using: :btree
 
 end
