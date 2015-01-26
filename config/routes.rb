@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :users do 
     member do
       post :follow
+      post :unfollow
       post :ignore
     end
 
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
+  get 'unfollowers' => 'users#unfollowers'
   root 'users#index'
 
   get '/auth/:provider/callback', to: 'sessions#create'

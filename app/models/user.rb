@@ -6,6 +6,12 @@ class User < ActiveRecord::Base
     user.save
   end
 
+  def self.unfollow(id, account_uid)
+    user = User.find_or_build(id, account_uid)
+    user.unfollowed_at = Time.now
+    user.save
+  end
+
   def self.ignore(id, account_uid)
     user = User.find_or_build(id, account_uid)
     user.ignored_at = Time.now

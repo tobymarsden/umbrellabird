@@ -13,9 +13,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def unfollowers
+    @users = twitter.unfollowers
+  end
+
   def follow
     twitter.follow(params[:id].try(:to_i))
     User.follow(params[:id], current_account_uid)
+    head status: :ok
+  end
+
+  def unfollow
+    twitter.unfollow(params[:id].try(:to_i))
+    User.unfollow(params[:id], current_account_uid)
     head status: :ok
   end
 

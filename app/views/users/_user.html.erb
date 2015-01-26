@@ -15,7 +15,8 @@
 		</div>
 	</div>
 	<div class="col-sm-3 actions">
-		<%= button_to "Follow", follow_user_path(user.id), remote: true, class: "btn btn-success btn-lg follow-btn" %>
-		<%= button_to "Ignore", ignore_user_path(user.id), remote: true, class: "btn btn-warning btn-lg ignore-btn" %>
+		<%= button_to "Follow", follow_user_path(user.id), remote: true, class: "btn btn-success btn-lg follow-btn" if actions.include?(:follow) %>
+		<%= button_to "Unfollow", unfollow_user_path(user.id), remote: true, class: "btn btn-danger btn-lg unfollow-btn" if actions.include?(:unfollow) %>
+		<%= button_to "Ignore", ignore_user_path(user.id), remote: true, class: "btn btn-warning btn-lg ignore-btn" if actions.include?(:ignore) %>
 	</div>
 </div>
