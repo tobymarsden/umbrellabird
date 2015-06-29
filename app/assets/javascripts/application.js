@@ -16,7 +16,6 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function() {
   $('.ub-follow-btn, .ub-ignore-btn, .ub-unfollow-btn').click(function() {
     $(this).closest('.user-row').hide();
     if($('.user-list').children(':visible').length == 0) {
@@ -26,4 +25,3 @@ $(document).ready(function() {
   $('.load-more-btn').click(function() {
   	location.reload();
   });
-});
