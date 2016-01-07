@@ -7,6 +7,8 @@ class TwitterBot
   end
 
   def twitter
+    Rails.logger.info @access_token
+    Rails.logger.info @access_token_secret
     @client ||= Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
       config.consumer_secret     = ENV['TWITTER_CONSUMER_SECRET']
