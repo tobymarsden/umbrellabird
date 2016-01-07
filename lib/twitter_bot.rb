@@ -25,6 +25,8 @@ class TwitterBot
     Rails.logger.info "user_ids:"
     Rails.logger.info user_ids
     users = twitter.users(User.user_ids_not_unfollow_ignored_or_followed_recently(user_ids, @account_uid).slice(0,100))
+    Rails.logger.info "twitter: "
+    Rails.logger.info twitter
     Rails.logger.info "users:"
     Rails.logger.info users.inspect
     users
