@@ -19,7 +19,8 @@ class TwitterBot
 
   def new_followers(username)
     user_ids = twitter.follower_ids(username).take(5000)
-    twitter.users(User.user_ids_not_following_or_follow_ignored(user_ids, @account_uid).slice(0,100))
+    users = twitter.users(User.user_ids_not_following_or_follow_ignored(user_ids, @account_uid).slice(0,100))
+    users || []
   end
 
   def unfollowers
