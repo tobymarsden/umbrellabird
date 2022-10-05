@@ -27,7 +27,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    addressable (2.3.6)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     arel (5.0.1.20140414130214)
     buftok (0.2.0)
     builder (3.2.2)
@@ -75,7 +76,6 @@ GEM
     minitest (5.5.0)
     multi_json (1.10.1)
     multipart-post (2.0.0)
-    mysql2 (0.3.17)
     naught (1.0.0)
     oauth (0.4.7)
     omniauth (1.2.2)
@@ -87,6 +87,8 @@ GEM
     omniauth-twitter (1.1.0)
       multi_json (~> 1.3)
       omniauth-oauth (~> 1.0)
+    pg (1.4.3)
+    public_suffix (5.0.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -174,9 +176,9 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   less-rails
-  mysql2
   omniauth
   omniauth-twitter
+  pg
   rails (= 4.1.8)
   rails_12factor
   sass-rails (~> 4.0.3)
